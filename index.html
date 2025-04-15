@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Trip - Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="registration-form">
+            <h2>Create Your Account</h2>
+            <p>Join our travel community and start your journey</p>
+            
+            <form id="registerForm" novalidate>
+                <div class="form-group">
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" 
+                           required minlength="3" maxlength="50"
+                           pattern="[A-Za-z\s]+"
+                           title="Please enter a valid name (letters and spaces only)">
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email Address" 
+                           required
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           title="Please enter a valid email address">
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Password" 
+                           required minlength="8"
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters">
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="confirmPassword" name="confirmPassword" 
+                           placeholder="Confirm Password" required
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number"
+                           pattern="[0-9]{10,}"
+                           title="Please enter a valid phone number (at least 10 digits)">
+                </div>
+                
+                <div class="form-group">
+                    <select id="country" name="country" required>
+                        <option value="" disabled selected>Select Country</option>
+                        <option value="US">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="CA">Canada</option>
+                        <option value="AU">Australia</option>
+                        <option value="IN">India</option>
+                    </select>
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the Terms & Conditions</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Create Account</button>
+                
+                <div class="success-message">
+                    Account created successfully! Welcome to Go Trip!
+                </div>
+                
+                <p class="login-link">Already have an account? <a href="#">Login</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
